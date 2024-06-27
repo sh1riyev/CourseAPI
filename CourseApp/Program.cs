@@ -25,7 +25,7 @@ builder.Host.UseSerilog();
 builder.Services.AddRepositoryLayer();
 builder.Services.AddServiceLayer();
 
-var app = builder.Build();
+var app = builder.Build();  
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
