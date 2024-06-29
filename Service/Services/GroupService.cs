@@ -44,6 +44,7 @@ namespace Service.Services
         public async Task Update(Group entity)
         {
             if (await _groupRepo.IsExist(m => m.Id != entity.Id && m.Name == entity.Name)) throw new FormatException();
+            entity.UpdateDate = DateTime.Now;
             await _groupRepo.Update(entity);
         }
     }

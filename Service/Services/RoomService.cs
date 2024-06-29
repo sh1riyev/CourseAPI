@@ -40,7 +40,8 @@ namespace Service.Services
         }
         public async Task Update(Room entity)
         {
-            if (await _roomRepo.IsExist(m => m.Id == entity.Id && m.Name == entity.Name)) throw new FormatException();
+            if (await _roomRepo.IsExist(m => m.Id != entity.Id && m.Name == entity.Name)) throw new FormatException();
+            entity.UpdateDate = DateTime.Now;
             await _roomRepo.Update(entity);
         }
     }

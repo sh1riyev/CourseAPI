@@ -43,6 +43,7 @@ namespace Service.Services
         public async Task Update(Teacher entity)
         {
             if (await _teacherRepo.IsExist(m => m.Id != entity.Id && m.Email == entity.Email)) throw new FormatException();
+            entity.UpdateDate = DateTime.Now;
           await  _teacherRepo.Update(entity);
         }
     }

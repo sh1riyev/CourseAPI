@@ -1097,3 +1097,951 @@ FROM [Educations] AS [e]
 2024-06-29 15:49:55.798 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.EducationController.Sort (CourseApp)'
 2024-06-29 15:49:55.798 +04:00 [INF] HTTP GET /api/Education/Sort responded 200 in 128.3020 ms
 2024-06-29 15:49:55.799 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Education/Sort?order=dadadada - - - 200 - application/json;+charset=utf-8 128.8999ms
+2024-06-29 15:56:28.530 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 15:56:28.541 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 15:56:28.542 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 15:56:28.542 +04:00 [INF] Hosting environment: Development
+2024-06-29 15:56:28.542 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 15:56:32.098 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 15:56:32.149 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 52.5256ms
+2024-06-29 15:56:32.355 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 15:56:32.418 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 63.2360ms
+2024-06-29 15:56:32.974 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 15:56:32.978 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 4.2239ms
+2024-06-29 15:56:33.077 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 15:56:33.082 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 4.8202ms
+2024-06-29 16:03:27.075 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:03:27.143 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:03:27.148 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:03:27.148 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:03:27.148 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:03:30.290 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 16:03:30.354 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 64.8640ms
+2024-06-29 16:03:30.753 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 16:03:30.806 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 53.5465ms
+2024-06-29 16:03:49.097 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 38
+2024-06-29 16:03:49.112 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:03:49.141 +04:00 [INF] Route matched with {action = "Create", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Service.DTOs.Room.RoomCreateDto) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:03:49.396 +04:00 [WRN] No store type was specified for the decimal property 'Sallary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-29 16:03:49.791 +04:00 [INF] Executed DbCommand (61ms) [Parameters=[@__entity_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Name] = @__entity_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:03:49.911 +04:00 [INF] Executed DbCommand (48ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Rooms] ([CreateDate], [IsDeleted], [Name], [SeatCount], [UpdateDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-06-29 16:03:49.922 +04:00 [ERR] An exception occurred in the database while saving changes for context type 'Repository.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-06-29 16:03:50.005 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Create (CourseApp) in 862.8627ms
+2024-06-29 16:03:50.006 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:03:50.007 +04:00 [ERR] HTTP POST /api/Room/Create responded 500 in 899.6558 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Repository.Repositories.BaseRepository`1.Create(T entity) in /Users/sh1riyev/Projects/CourseApp/Repository/Repositories/BaseRepository.cs:line 22
+   at Service.Services.RoomService.Create(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 20
+   at CourseApp.Controllers.RoomController.Create(RoomCreateDto request) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-29 16:03:50.053 +04:00 [ERR] An unexpected error occurred
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Repository.Repositories.BaseRepository`1.Create(T entity) in /Users/sh1riyev/Projects/CourseApp/Repository/Repositories/BaseRepository.cs:line 22
+   at Service.Services.RoomService.Create(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 20
+   at CourseApp.Controllers.RoomController.Create(RoomCreateDto request) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Middelware/GlobalExceptionHandlingMiddelware.cs:line 21
+2024-06-29 16:03:50.057 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 38 - 500 - application/json 960.9162ms
+2024-06-29 16:04:07.787 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 37
+2024-06-29 16:04:07.794 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:04:07.795 +04:00 [INF] Route matched with {action = "Create", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Service.DTOs.Room.RoomCreateDto) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:04:07.857 +04:00 [INF] Executed DbCommand (11ms) [Parameters=[@__entity_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Name] = @__entity_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:04:07.880 +04:00 [INF] Executed DbCommand (20ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Rooms] ([CreateDate], [IsDeleted], [Name], [SeatCount], [UpdateDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-06-29 16:04:07.885 +04:00 [ERR] An exception occurred in the database while saving changes for context type 'Repository.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-06-29 16:04:07.931 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Create (CourseApp) in 135.0826ms
+2024-06-29 16:04:07.931 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:04:07.931 +04:00 [ERR] HTTP POST /api/Room/Create responded 500 in 137.8857 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Repository.Repositories.BaseRepository`1.Create(T entity) in /Users/sh1riyev/Projects/CourseApp/Repository/Repositories/BaseRepository.cs:line 22
+   at Service.Services.RoomService.Create(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 20
+   at CourseApp.Controllers.RoomController.Create(RoomCreateDto request) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-29 16:04:07.956 +04:00 [ERR] An unexpected error occurred
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The INSERT statement conflicted with the CHECK constraint "CK_Room_SeatCount". The conflict occurred in database "CourseAPI", table "dbo.Rooms", column 'SeatCount'.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetAsync(Int32 startCommandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:7b1e0ee6-4b54-4d3f-a96f-5bfb556aa66c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Repository.Repositories.BaseRepository`1.Create(T entity) in /Users/sh1riyev/Projects/CourseApp/Repository/Repositories/BaseRepository.cs:line 22
+   at Service.Services.RoomService.Create(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 20
+   at CourseApp.Controllers.RoomController.Create(RoomCreateDto request) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Middelware/GlobalExceptionHandlingMiddelware.cs:line 21
+2024-06-29 16:04:07.958 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 37 - 500 - application/json 170.8372ms
+2024-06-29 16:04:13.725 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 38
+2024-06-29 16:04:13.726 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:04:13.727 +04:00 [INF] Route matched with {action = "Create", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Service.DTOs.Room.RoomCreateDto) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:04:13.759 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__entity_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Name] = @__entity_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:04:13.768 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Rooms] ([CreateDate], [IsDeleted], [Name], [SeatCount], [UpdateDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-06-29 16:04:13.789 +04:00 [INF] Executing CreatedAtActionResult, writing value of type 'Domain.Entity.Room'.
+2024-06-29 16:04:13.808 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Create (CourseApp) in 80.1741ms
+2024-06-29 16:04:13.808 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:04:13.808 +04:00 [INF] HTTP POST /api/Room/Create responded 201 in 81.4889 ms
+2024-06-29 16:04:13.808 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 38 - 201 - application/json;+charset=utf-8 83.1445ms
+2024-06-29 16:05:24.191 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 38
+2024-06-29 16:05:24.195 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:05:24.197 +04:00 [INF] Route matched with {action = "Create", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Service.DTOs.Room.RoomCreateDto) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:05:24.282 +04:00 [INF] Executed DbCommand (72ms) [Parameters=[@__entity_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Name] = @__entity_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:05:24.334 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Create (CourseApp) in 135.9888ms
+2024-06-29 16:05:24.334 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:05:24.335 +04:00 [ERR] HTTP POST /api/Room/Create responded 500 in 139.7491 ms
+System.FormatException: One of the identified items was in an invalid format.
+   at Service.Services.RoomService.Create(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 19
+   at CourseApp.Controllers.RoomController.Create(RoomCreateDto request) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-29 16:05:24.365 +04:00 [ERR] An unexpected error occurred
+System.FormatException: One of the identified items was in an invalid format.
+   at Service.Services.RoomService.Create(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 19
+   at CourseApp.Controllers.RoomController.Create(RoomCreateDto request) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 26
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Middelware/GlobalExceptionHandlingMiddelware.cs:line 21
+2024-06-29 16:05:24.366 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 38 - 500 - application/json 175.0374ms
+2024-06-29 16:05:37.127 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 39
+2024-06-29 16:05:37.129 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:05:37.129 +04:00 [INF] Route matched with {action = "Create", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Service.DTOs.Room.RoomCreateDto) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:05:37.140 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__entity_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Name] = @__entity_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:05:37.150 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Rooms] ([CreateDate], [IsDeleted], [Name], [SeatCount], [UpdateDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-06-29 16:05:37.151 +04:00 [INF] Executing CreatedAtActionResult, writing value of type 'Domain.Entity.Room'.
+2024-06-29 16:05:37.152 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Create (CourseApp) in 23.2792ms
+2024-06-29 16:05:37.152 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:05:37.153 +04:00 [INF] HTTP POST /api/Room/Create responded 201 in 24.0913 ms
+2024-06-29 16:05:37.153 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 39 - 201 - application/json;+charset=utf-8 25.8782ms
+2024-06-29 16:05:48.623 +04:00 [INF] Request starting HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 41
+2024-06-29 16:05:48.625 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:05:48.625 +04:00 [INF] Route matched with {action = "Create", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Create(Service.DTOs.Room.RoomCreateDto) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:05:48.730 +04:00 [INF] Executed DbCommand (52ms) [Parameters=[@__entity_Name_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Name] = @__entity_Name_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:05:48.765 +04:00 [INF] Executed DbCommand (9ms) [Parameters=[@p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [Rooms] ([CreateDate], [IsDeleted], [Name], [SeatCount], [UpdateDate])
+OUTPUT INSERTED.[Id]
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2024-06-29 16:05:48.766 +04:00 [INF] Executing CreatedAtActionResult, writing value of type 'Domain.Entity.Room'.
+2024-06-29 16:05:48.767 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Create (CourseApp) in 142.1551ms
+2024-06-29 16:05:48.767 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Create (CourseApp)'
+2024-06-29 16:05:48.767 +04:00 [INF] HTTP POST /api/Room/Create responded 201 in 142.8719 ms
+2024-06-29 16:05:48.768 +04:00 [INF] Request finished HTTP/1.1 POST https://localhost:7228/api/Room/Create application/json 41 - 201 - application/json;+charset=utf-8 144.2836ms
+2024-06-29 16:07:27.321 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:07:27.333 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:07:27.333 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:07:27.333 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:07:27.333 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:07:28.003 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 16:07:28.055 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 53.1402ms
+2024-06-29 16:07:28.291 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 16:07:28.344 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 52.8861ms
+2024-06-29 16:07:33.288 +04:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7228/api/Room/Delete/10 - -
+2024-06-29 16:07:33.302 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Delete (CourseApp)'
+2024-06-29 16:07:33.324 +04:00 [INF] Route matched with {action = "Delete", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:07:33.590 +04:00 [WRN] No store type was specified for the decimal property 'Sallary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-29 16:07:33.973 +04:00 [INF] Executed DbCommand (40ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:07:33.985 +04:00 [INF] Executing StatusCodeResult, setting HTTP status code 404
+2024-06-29 16:07:33.986 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Delete (CourseApp) in 660.6573ms
+2024-06-29 16:07:33.986 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Delete (CourseApp)'
+2024-06-29 16:07:33.987 +04:00 [INF] HTTP DELETE /api/Room/Delete/10 responded 404 in 688.5024 ms
+2024-06-29 16:07:33.990 +04:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7228/api/Room/Delete/10 - - - 404 0 - 702.0534ms
+2024-06-29 16:07:40.305 +04:00 [INF] Request starting HTTP/1.1 DELETE https://localhost:7228/api/Room/Delete/3 - -
+2024-06-29 16:07:40.307 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Delete (CourseApp)'
+2024-06-29 16:07:40.308 +04:00 [INF] Route matched with {action = "Delete", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Delete(System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:07:40.361 +04:00 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:07:40.457 +04:00 [INF] Executed DbCommand (41ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+DELETE FROM [Rooms]
+OUTPUT 1
+WHERE [Id] = @p0;
+2024-06-29 16:07:40.463 +04:00 [INF] Executing StatusCodeResult, setting HTTP status code 200
+2024-06-29 16:07:40.463 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Delete (CourseApp) in 154.6291ms
+2024-06-29 16:07:40.463 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Delete (CourseApp)'
+2024-06-29 16:07:40.463 +04:00 [INF] HTTP DELETE /api/Room/Delete/3 responded 200 in 155.7459 ms
+2024-06-29 16:07:40.463 +04:00 [INF] Request finished HTTP/1.1 DELETE https://localhost:7228/api/Room/Delete/3 - - - 200 0 - 158.1607ms
+2024-06-29 16:11:09.268 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:11:09.280 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:11:09.280 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:11:09.280 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:11:09.280 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:11:11.583 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 16:11:11.635 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 53.2504ms
+2024-06-29 16:11:11.836 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 16:11:11.894 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 57.7700ms
+2024-06-29 16:11:48.398 +04:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4 - 0
+2024-06-29 16:11:48.418 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:11:48.460 +04:00 [INF] Route matched with {action = "Update", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Service.DTOs.Room.RoomUpdateDto, System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:11:48.749 +04:00 [WRN] No store type was specified for the decimal property 'Sallary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-29 16:11:49.123 +04:00 [INF] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:11:49.162 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT CAST(0 AS bit)
+2024-06-29 16:11:49.226 +04:00 [INF] Executed DbCommand (20ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Rooms] SET [CreateDate] = @p0, [IsDeleted] = @p1, [Name] = @p2, [SeatCount] = @p3, [UpdateDate] = @p4
+OUTPUT 1
+WHERE [Id] = @p5;
+2024-06-29 16:11:49.237 +04:00 [ERR] An exception occurred in the database while saving changes for context type 'Repository.Data.AppDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'CourseAPI.dbo.Rooms'; column does not allow nulls. UPDATE fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:91b3a544-d44b-4b26-ae26-8504ed76e76d
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'CourseAPI.dbo.Rooms'; column does not allow nulls. UPDATE fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:91b3a544-d44b-4b26-ae26-8504ed76e76d
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2024-06-29 16:11:49.324 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Update (CourseApp) in 860.3947ms
+2024-06-29 16:11:49.325 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:11:49.326 +04:00 [ERR] HTTP PUT /api/Room/Update/4 responded 500 in 913.4231 ms
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'CourseAPI.dbo.Rooms'; column does not allow nulls. UPDATE fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:91b3a544-d44b-4b26-ae26-8504ed76e76d
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Repository.Repositories.BaseRepository`1.Update(T entity) in /Users/sh1riyev/Projects/CourseApp/Repository/Repositories/BaseRepository.cs:line 71
+   at Service.Services.RoomService.Update(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 45
+   at CourseApp.Controllers.RoomController.Update(RoomUpdateDto request, Nullable`1 id) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-29 16:11:49.370 +04:00 [ERR] An unexpected error occurred
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): Cannot insert the value NULL into column 'Name', table 'CourseAPI.dbo.Rooms'; column does not allow nulls. UPDATE fails.
+   at Microsoft.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at Microsoft.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at Microsoft.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryHasMoreRows(Boolean& moreRows)
+   at Microsoft.Data.SqlClient.SqlDataReader.TryReadInternal(Boolean setTimeout, Boolean& more)
+   at Microsoft.Data.SqlClient.SqlDataReader.ReadAsyncExecute(Task task, Object state)
+   at Microsoft.Data.SqlClient.SqlDataReader.InvokeAsyncCall[T](SqlDataReaderBaseAsyncCallContext`1 context)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeResultSetWithRowsAffectedOnlyAsync(Int32 commandIndex, RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+ClientConnectionId:91b3a544-d44b-4b26-ae26-8504ed76e76d
+Error Number:515,State:2,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.AffectedCountModificationCommandBatch.ConsumeAsync(RelationalDataReader reader, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Update.Internal.SqlServerModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Repository.Repositories.BaseRepository`1.Update(T entity) in /Users/sh1riyev/Projects/CourseApp/Repository/Repositories/BaseRepository.cs:line 71
+   at Service.Services.RoomService.Update(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 45
+   at CourseApp.Controllers.RoomController.Update(RoomUpdateDto request, Nullable`1 id) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Middelware/GlobalExceptionHandlingMiddelware.cs:line 21
+2024-06-29 16:11:49.375 +04:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4 - 0 - 500 - application/json 977.8523ms
+2024-06-29 16:12:03.619 +04:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4?Name=Saturn&SeatCount=21 - 0
+2024-06-29 16:12:03.625 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:12:03.627 +04:00 [INF] Route matched with {action = "Update", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Service.DTOs.Room.RoomUpdateDto, System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:12:03.678 +04:00 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:12:03.703 +04:00 [INF] Executed DbCommand (19ms) [Parameters=[@__entity_Id_0='?' (DbType = Int32), @__entity_Name_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Id] = @__entity_Id_0 AND [r].[Name] = @__entity_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:12:03.711 +04:00 [INF] Executed DbCommand (7ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Rooms] SET [CreateDate] = @p0, [IsDeleted] = @p1, [Name] = @p2, [SeatCount] = @p3, [UpdateDate] = @p4
+OUTPUT 1
+WHERE [Id] = @p5;
+2024-06-29 16:12:03.716 +04:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Entity.Room'.
+2024-06-29 16:12:03.723 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Update (CourseApp) in 96.3847ms
+2024-06-29 16:12:03.723 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:12:03.723 +04:00 [INF] HTTP PUT /api/Room/Update/4 responded 200 in 98.5220 ms
+2024-06-29 16:12:03.724 +04:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4?Name=Saturn&SeatCount=21 - 0 - 200 - application/json;+charset=utf-8 105.9001ms
+2024-06-29 16:13:00.288 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:13:00.300 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:13:00.301 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:13:00.301 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:13:00.301 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:13:07.919 +04:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4?Name=Saturn&SeatCount=21 - 0
+2024-06-29 16:13:07.939 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:13:07.948 +04:00 [INF] Route matched with {action = "Update", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Service.DTOs.Room.RoomUpdateDto, System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:13:08.166 +04:00 [WRN] No store type was specified for the decimal property 'Sallary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-29 16:13:08.527 +04:00 [INF] Executed DbCommand (23ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:13:08.584 +04:00 [INF] Executed DbCommand (17ms) [Parameters=[@__entity_Id_0='?' (DbType = Int32), @__entity_Name_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Id] <> @__entity_Id_0 AND [r].[Name] = @__entity_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:13:08.632 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Update (CourseApp) in 682.3207ms
+2024-06-29 16:13:08.632 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:13:08.633 +04:00 [ERR] HTTP PUT /api/Room/Update/4 responded 500 in 695.5063 ms
+System.FormatException: One of the identified items was in an invalid format.
+   at Service.Services.RoomService.Update(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 43
+   at CourseApp.Controllers.RoomController.Update(RoomUpdateDto request, Nullable`1 id) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-29 16:13:08.673 +04:00 [ERR] An unexpected error occurred
+System.FormatException: One of the identified items was in an invalid format.
+   at Service.Services.RoomService.Update(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 43
+   at CourseApp.Controllers.RoomController.Update(RoomUpdateDto request, Nullable`1 id) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Middelware/GlobalExceptionHandlingMiddelware.cs:line 21
+2024-06-29 16:13:08.683 +04:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4?Name=Saturn&SeatCount=21 - 0 - 500 - application/json 766.2256ms
+2024-06-29 16:13:13.035 +04:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4?Name=Mars&SeatCount=21 - 0
+2024-06-29 16:13:13.041 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:13:13.042 +04:00 [INF] Route matched with {action = "Update", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Service.DTOs.Room.RoomUpdateDto, System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:13:13.096 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:13:13.148 +04:00 [INF] Executed DbCommand (26ms) [Parameters=[@__entity_Id_0='?' (DbType = Int32), @__entity_Name_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Id] <> @__entity_Id_0 AND [r].[Name] = @__entity_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:13:13.200 +04:00 [INF] Executed DbCommand (9ms) [Parameters=[@p5='?' (DbType = Int32), @p0='?' (DbType = DateTime2), @p1='?' (DbType = Boolean), @p2='?' (Size = 100), @p3='?' (DbType = Int32), @p4='?' (DbType = DateTime2)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [Rooms] SET [CreateDate] = @p0, [IsDeleted] = @p1, [Name] = @p2, [SeatCount] = @p3, [UpdateDate] = @p4
+OUTPUT 1
+WHERE [Id] = @p5;
+2024-06-29 16:13:13.206 +04:00 [INF] Executing OkObjectResult, writing value of type 'Domain.Entity.Room'.
+2024-06-29 16:13:13.217 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Update (CourseApp) in 175.4727ms
+2024-06-29 16:13:13.217 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:13:13.217 +04:00 [INF] HTTP PUT /api/Room/Update/4 responded 200 in 176.8209 ms
+2024-06-29 16:13:13.218 +04:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7228/api/Room/Update/4?Name=Mars&SeatCount=21 - 0 - 200 - application/json;+charset=utf-8 182.6521ms
+2024-06-29 16:13:20.880 +04:00 [INF] Request starting HTTP/1.1 PUT https://localhost:7228/api/Room/Update/5?Name=Mars&SeatCount=30 - 0
+2024-06-29 16:13:20.884 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:13:20.884 +04:00 [INF] Route matched with {action = "Update", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Update(Service.DTOs.Room.RoomUpdateDto, System.Nullable`1[System.Int32]) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:13:20.908 +04:00 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE [r].[Id] = @__id_0
+2024-06-29 16:13:20.910 +04:00 [INF] Executed DbCommand (2ms) [Parameters=[@__entity_Id_0='?' (DbType = Int32), @__entity_Name_1='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Rooms] AS [r]
+        WHERE [r].[Id] <> @__entity_Id_0 AND [r].[Name] = @__entity_Name_1) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-06-29 16:13:20.952 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Update (CourseApp) in 67.7096ms
+2024-06-29 16:13:20.952 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Update (CourseApp)'
+2024-06-29 16:13:20.953 +04:00 [ERR] HTTP PUT /api/Room/Update/5 responded 500 in 68.6924 ms
+System.FormatException: One of the identified items was in an invalid format.
+   at Service.Services.RoomService.Update(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 43
+   at CourseApp.Controllers.RoomController.Update(RoomUpdateDto request, Nullable`1 id) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2024-06-29 16:13:20.977 +04:00 [ERR] An unexpected error occurred
+System.FormatException: One of the identified items was in an invalid format.
+   at Service.Services.RoomService.Update(Room entity) in /Users/sh1riyev/Projects/CourseApp/Service/Services/RoomService.cs:line 43
+   at CourseApp.Controllers.RoomController.Update(RoomUpdateDto request, Nullable`1 id) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/RoomController.cs:line 47
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at GlobalExceptionHandlingMiddleware.InvokeAsync(HttpContext context) in /Users/sh1riyev/Projects/CourseApp/CourseApp/Middelware/GlobalExceptionHandlingMiddelware.cs:line 21
+2024-06-29 16:13:20.978 +04:00 [INF] Request finished HTTP/1.1 PUT https://localhost:7228/api/Room/Update/5?Name=Mars&SeatCount=30 - 0 - 500 - application/json 98.0083ms
+2024-06-29 16:16:48.485 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:16:48.498 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:16:48.499 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:16:48.499 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:16:48.499 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:16:51.705 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 16:16:51.763 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 58.3149ms
+2024-06-29 16:16:51.955 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 16:16:52.008 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 53.5555ms
+2024-06-29 16:16:59.743 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Search - -
+2024-06-29 16:16:59.770 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Search (CourseApp)'
+2024-06-29 16:16:59.792 +04:00 [INF] Route matched with {action = "Search", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:17:00.047 +04:00 [WRN] No store type was specified for the decimal property 'Sallary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-29 16:17:00.119 +04:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2024-06-29 16:17:00.121 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Search (CourseApp) in 327.8037ms
+2024-06-29 16:17:00.122 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Search (CourseApp)'
+2024-06-29 16:17:00.122 +04:00 [INF] HTTP GET /api/Room/Search responded 400 in 359.4273 ms
+2024-06-29 16:17:00.124 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Search - - - 400 - text/plain;+charset=utf-8 381.4994ms
+2024-06-29 16:17:03.246 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Search?roomName=a - -
+2024-06-29 16:17:03.250 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Search (CourseApp)'
+2024-06-29 16:17:03.251 +04:00 [INF] Route matched with {action = "Search", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:17:03.746 +04:00 [INF] Executed DbCommand (32ms) [Parameters=[@__roomName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE (@__roomName_0 LIKE N'') OR CHARINDEX(@__roomName_0, [r].[Name]) > 0
+2024-06-29 16:17:03.779 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Room.RoomDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-29 16:17:03.781 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Search (CourseApp) in 530.0837ms
+2024-06-29 16:17:03.781 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Search (CourseApp)'
+2024-06-29 16:17:03.782 +04:00 [INF] HTTP GET /api/Room/Search responded 200 in 531.4638 ms
+2024-06-29 16:17:03.783 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Search?roomName=a - - - 200 - application/json;+charset=utf-8 537.3630ms
+2024-06-29 16:17:09.244 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Search?roomName=j - -
+2024-06-29 16:17:09.245 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Search (CourseApp)'
+2024-06-29 16:17:09.245 +04:00 [INF] Route matched with {action = "Search", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Search(System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:17:09.320 +04:00 [INF] Executed DbCommand (51ms) [Parameters=[@__roomName_0='?' (Size = 100)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+WHERE (@__roomName_0 LIKE N'') OR CHARINDEX(@__roomName_0, [r].[Name]) > 0
+2024-06-29 16:17:09.321 +04:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-06-29 16:17:09.322 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Search (CourseApp) in 76.2237ms
+2024-06-29 16:17:09.322 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Search (CourseApp)'
+2024-06-29 16:17:09.322 +04:00 [INF] HTTP GET /api/Room/Search responded 404 in 77.0124 ms
+2024-06-29 16:17:09.322 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Search?roomName=j - - - 404 - text/plain;+charset=utf-8 78.0957ms
+2024-06-29 16:37:04.880 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:37:04.892 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:37:04.893 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:37:04.893 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:37:04.893 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:37:22.132 +04:00 [INF] Now listening on: https://localhost:7228
+2024-06-29 16:37:22.144 +04:00 [INF] Now listening on: http://localhost:5062
+2024-06-29 16:37:22.144 +04:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-06-29 16:37:22.144 +04:00 [INF] Hosting environment: Development
+2024-06-29 16:37:22.144 +04:00 [INF] Content root path: /Users/sh1riyev/Projects/CourseApp/CourseApp
+2024-06-29 16:37:31.371 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/index.html - -
+2024-06-29 16:37:31.425 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/index.html - - - 200 - text/html;charset=utf-8 54.5278ms
+2024-06-29 16:37:31.655 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - -
+2024-06-29 16:37:31.702 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 46.8615ms
+2024-06-29 16:37:41.254 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=name&order=asc - -
+2024-06-29 16:37:41.270 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:41.294 +04:00 [INF] Route matched with {action = "Sort", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Sort(System.String, System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:37:41.562 +04:00 [WRN] No store type was specified for the decimal property 'Sallary' on entity type 'Teacher'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-06-29 16:37:41.897 +04:00 [INF] Executed DbCommand (22ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+2024-06-29 16:37:41.932 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Room.RoomDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-29 16:37:41.935 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Sort (CourseApp) in 639.6654ms
+2024-06-29 16:37:41.935 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:41.936 +04:00 [INF] HTTP GET /api/Room/Sort responded 200 in 670.5938 ms
+2024-06-29 16:37:41.939 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=name&order=asc - - - 200 - application/json;+charset=utf-8 685.3556ms
+2024-06-29 16:37:49.194 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=name&order=desc - -
+2024-06-29 16:37:49.198 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:49.199 +04:00 [INF] Route matched with {action = "Sort", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Sort(System.String, System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:37:49.251 +04:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+2024-06-29 16:37:49.252 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Room.RoomDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-29 16:37:49.252 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Sort (CourseApp) in 52.7921ms
+2024-06-29 16:37:49.252 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:49.252 +04:00 [INF] HTTP GET /api/Room/Sort responded 200 in 54.2046 ms
+2024-06-29 16:37:49.252 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=name&order=desc - - - 200 - application/json;+charset=utf-8 58.3994ms
+2024-06-29 16:37:54.515 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=capacity&order=desc - -
+2024-06-29 16:37:54.515 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:54.516 +04:00 [INF] Route matched with {action = "Sort", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Sort(System.String, System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:37:54.649 +04:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+2024-06-29 16:37:54.702 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Room.RoomDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-29 16:37:54.703 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Sort (CourseApp) in 187.344ms
+2024-06-29 16:37:54.703 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:54.704 +04:00 [INF] HTTP GET /api/Room/Sort responded 200 in 188.2839 ms
+2024-06-29 16:37:54.704 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=capacity&order=desc - - - 200 - application/json;+charset=utf-8 190.1960ms
+2024-06-29 16:37:57.965 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=capacity&order=asc - -
+2024-06-29 16:37:57.967 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:57.967 +04:00 [INF] Route matched with {action = "Sort", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Sort(System.String, System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:37:58.045 +04:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+2024-06-29 16:37:58.047 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Room.RoomDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-29 16:37:58.047 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Sort (CourseApp) in 79.717ms
+2024-06-29 16:37:58.047 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:37:58.047 +04:00 [INF] HTTP GET /api/Room/Sort responded 200 in 80.3441 ms
+2024-06-29 16:37:58.047 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=capacity&order=asc - - - 200 - application/json;+charset=utf-8 82.3098ms
+2024-06-29 16:38:00.645 +04:00 [INF] Request starting HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=capacity&order=desc - -
+2024-06-29 16:38:00.645 +04:00 [INF] Executing endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:38:00.647 +04:00 [INF] Route matched with {action = "Sort", controller = "Room"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Sort(System.String, System.String) on controller CourseApp.Controllers.RoomController (CourseApp).
+2024-06-29 16:38:00.700 +04:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[CreateDate], [r].[IsDeleted], [r].[Name], [r].[SeatCount], [r].[UpdateDate]
+FROM [Rooms] AS [r]
+2024-06-29 16:38:00.722 +04:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Service.DTOs.Room.RoomDto, Service, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-06-29 16:38:00.723 +04:00 [INF] Executed action CourseApp.Controllers.RoomController.Sort (CourseApp) in 76.1697ms
+2024-06-29 16:38:00.723 +04:00 [INF] Executed endpoint 'CourseApp.Controllers.RoomController.Sort (CourseApp)'
+2024-06-29 16:38:00.723 +04:00 [INF] HTTP GET /api/Room/Sort responded 200 in 77.9718 ms
+2024-06-29 16:38:00.723 +04:00 [INF] Request finished HTTP/1.1 GET https://localhost:7228/api/Room/Sort?property=capacity&order=desc - - - 200 - application/json;+charset=utf-8 78.4433ms
