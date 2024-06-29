@@ -11,6 +11,10 @@ namespace Repository.Data
         public DbSet<Group> Groups { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<GroupStudent> GroupStudents { get; set; }
+        public DbSet<GroupTeacher> GroupTeachers { get; set; }
+        public DbSet<Education> Educations { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

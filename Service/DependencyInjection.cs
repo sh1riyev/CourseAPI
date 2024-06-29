@@ -3,8 +3,6 @@ using System;
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using Microsoft.Extensions.DependencyInjection;
-using Repository.Repositories;
-using Repository.Repositories.Interface;
 using Service.Helpers;
 using Service.Services;
 using Service.Services.Interface;
@@ -20,7 +18,12 @@ namespace Repository
 
             services.AddAutoMapper(typeof(MappingProfile).Assembly);
             services.AddScoped<IGroupService, GroupService>();
+            services.AddScoped<IRoomService, RoomService>();
             services.AddScoped<IStudentService, StudentService>();
+            services.AddScoped<ITeacherService, TeacherService>();
+            services.AddScoped<IEducationService, EducationService>();
+
+
             //services.AddScoped<IValidator<CountryCreateDto>, CountryCreateDtoValidator>();
             return services;
         }

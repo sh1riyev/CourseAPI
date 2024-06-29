@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Domain.Entity;
+using Service.DTOs.Education;
 using Service.DTOs.Group;
 
 namespace Service.Helpers
@@ -9,6 +10,10 @@ namespace Service.Helpers
         public MappingProfile()
         {
             CreateMap<GroupCreateDto, Group>();
+            CreateMap<EducationCreateDto, Education>();
+            CreateMap<EducationUpdateDto, Education>();
+            CreateMap<Education, EducationDto>();
+
         }
     }
 }

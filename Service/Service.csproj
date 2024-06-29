@@ -32,6 +32,9 @@
     <None Remove="DTOs\Group\" />
     <None Remove="DTOs\Student\" />
     <None Remove="Services\Interface\" />
+    <None Remove="DTOs\Teacher\" />
+    <None Remove="DTOs\Room\" />
+    <None Remove="DTOs\Education\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
@@ -40,5 +43,8 @@
     <Folder Include="DTOs\Group\" />
     <Folder Include="DTOs\Student\" />
     <Folder Include="Services\Interface\" />
+    <Folder Include="DTOs\Teacher\" />
+    <Folder Include="DTOs\Room\" />
+    <Folder Include="DTOs\Education\" />
   </ItemGroup>
 </Project>

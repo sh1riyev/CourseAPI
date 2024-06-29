@@ -34,6 +34,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
+
 app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
