@@ -1,36 +1,35 @@
 ﻿<Properties StartupConfiguration="{8235CEAD-15C6-4328-B5DF-70479883FAE2}|Default">
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/EducationController.cs" relfile="CourseApp/Controllers/EducationController.cs" line="54" column="1" />
+      <Breakpoint file="/Users/sh1riyev/Projects/CourseApp/CourseApp/Controllers/GroupController.cs" relfile="CourseApp/Controllers/GroupController.cs" line="34" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.ItemProperties.CourseApp PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Service/Services/RoomService.cs">
-    <Files>
-      <File FileName="Service/Services/RoomService.cs" Line="44" Column="44" />
-      <File FileName="Service/Services/StudentService.cs" Line="30" Column="30" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="CourseApp" expanded="True">
-            <Node name="CourseApp" expanded="True">
-              <Node name="Controllers" expanded="True" />
+            <Node name="CourseApp">
+              <Node name="Controllers" expanded="True">
+                <Node name="RoomController.cs" selected="True" />
+              </Node>
               <Node name="Middelware" expanded="True" />
             </Node>
             <Node name="Domain" expanded="True">
+              <Node name="Common" expanded="True" />
               <Node name="Configuration" expanded="True" />
               <Node name="Entity" expanded="True" />
             </Node>
+            <Node name="Repository">
+              <Node name="Repositories" expanded="True" />
+            </Node>
             <Node name="Service">
-              <Node name="Dependencies" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-              <Node name="Services" expanded="True">
-                <Node name="Interface" expanded="True" />
-                <Node name="RoomService.cs" selected="True" />
-              </Node>
+              <Node name="Services" expanded="True" />
             </Node>
           </Node>
         </State>

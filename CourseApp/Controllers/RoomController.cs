@@ -72,12 +72,12 @@ namespace CourseApp.Controllers
 					mappedQuery = order.ToLower() == "desc" ? mappedQuery.OrderByDescending(m => m.Name).ToList()
 						: mappedQuery.OrderBy(m => m.Name).ToList();
                     break;
-				case "capacity":
+				case "seatcount":
                     mappedQuery = order.ToLower() == "desc" ? mappedQuery.OrderByDescending(m => m.SeatCount).ToList()
                     : mappedQuery.OrderBy(m => m.SeatCount).ToList();
                     break;
                 default:
-                    return BadRequest("Invalid sortBy parameter. Use 'name' or 'capacity'.");
+                    return BadRequest("Invalid sortBy parameter. Use 'name' or 'seatcount'.");
 			}
 
 			return Ok(mappedQuery);

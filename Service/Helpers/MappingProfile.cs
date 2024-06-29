@@ -10,7 +10,9 @@ namespace Service.Helpers
     {
         public MappingProfile()
         {
+            CreateMap<GroupUpdateDto, Group>();
             CreateMap<GroupCreateDto, Group>();
+            CreateMap<Group, GroupDto>();
             CreateMap<EducationCreateDto, Education>();
             CreateMap<EducationUpdateDto, Education>();
             CreateMap<Education, EducationDto>();
